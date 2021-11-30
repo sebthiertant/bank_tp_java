@@ -1,19 +1,14 @@
 package fr.training.bank;
 
+import java.util.UUID;
+
 public class Account {
-    private int number;
+    private UUID number = UUID.randomUUID();
     private float amount;
 
     public Account() { // default constructor
-        this.number = 0;
         this.amount = 0;
     }
-
-    public Account(int number, float amount) { // constructor
-        this.number = number;
-        this.amount = amount;
-    }
-
 
     void depot(float value) { // add amount
         this.amount += value;
@@ -29,11 +24,15 @@ public class Account {
         System.out.println("Virement effectué. Votre montant est de " + this.amount + ". Le montant du créditeur est de " + destinataire.getAmount() + ".");
     }
 
-    public void displayAmount() { // display the amount
+    void displayAmount() { // display the amount
         System.out.println(amount);
     }
 
-    public float getAmount() { // return the amount
+    void displayNumberAccount() {
+        System.out.println(this.number);
+    }
+
+    float getAmount() { // return the amount
         return amount;
     }
 }

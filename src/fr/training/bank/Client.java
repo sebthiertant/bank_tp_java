@@ -3,35 +3,35 @@ package fr.training.bank;
 import java.util.ArrayList;
 
 public class Client {
-    private ArrayList<Account> account = new ArrayList<Account>();
+    private ArrayList<Account> accountList = new ArrayList<Account>();
     private String name;
 
     public Client(String name, Account account) {
         this.name = name;
-        this.account.add(account);
+        this.accountList.add(account);
     }
 
-    public String getName() { // return the Client's name
+    String getName() { // return the Client's name
         return name;
     }
 
-    public int accountNumber() { // return the account's number
-        return account.size();
+    int accountNumber() { // return the account's number
+        return accountList.size();
     }
 
-    public void addAccount(Account account) { // add an account to a Client
-        this.account.add(account);
+    void addAccount(Account account) { // add an account to a Client
+        this.accountList.add(account);
     }
 
-    public float getAmount() { // return the amount
-        for (Account account : this.account) {
+    float getAmount() { // return the amount
+        for (Account account : this.accountList) {
             return account.getAmount();
         }
         return 0; // add by IDE not good imo
     }
 
-    public void displayAmount() { // print the amount
-        for (Account account : this.account) {
+    void displayAmount() { // print the amount
+        for (Account account : this.accountList) {
             System.out.println(account.getAmount());
         }
 

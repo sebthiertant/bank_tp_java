@@ -3,15 +3,22 @@ package fr.training.bank;
 public class Main {
     public static void main(String[] args) {
 
-        Account firstAccount = new Account(111111, 100);
-        Account secondAccount = new Account(22222, 300);
+        Account firstAccount = new Account();
+        Account secondAccount = new Account();
 
 
         Client firstClient = new Client("Sébastien", firstAccount);
-        firstClient.addAccount(secondAccount);
+        Client secondClient = new Client("Boris", secondAccount);
 
-        firstAccount.virer(50F, secondAccount);
+        BanqueInteractive firstBank = new BanqueInteractive();
 
-        firstClient.displayAmount();
+
+        /*firstBank.addClient(firstClient);
+        firstBank.addClient(secondClient);
+
+        firstBank.displayBilanAll();
+        */
+
+        firstBank.interactionWithClient();
     }
 }
