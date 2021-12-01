@@ -24,6 +24,10 @@ public class Account {
         System.out.println("Virement effectué. Votre montant est de " + this.amount + ". Le montant du créditeur est de " + destinataire.getAmount() + ".");
     }
 
+    UUID getAccountNumber(){
+        return this.number;
+    }
+
     void displayAmount() { // display the amount
         System.out.println(amount);
     }
@@ -36,3 +40,5 @@ public class Account {
         return amount;
     }
 }
+
+
